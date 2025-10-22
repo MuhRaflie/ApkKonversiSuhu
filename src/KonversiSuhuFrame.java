@@ -25,21 +25,171 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        txtInput = new javax.swing.JTextField();
+        comboAsal = new javax.swing.JComboBox<>();
+        comboTujuan = new javax.swing.JComboBox<>();
+        btnKonversi = new javax.swing.JButton();
+        txtHasil = new javax.swing.JTextField();
+        txtRiwayat = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        radioOtomatis = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Milky Nice", 0, 18)); // NOI18N
+        jLabel1.setText("Aplikasi Konversi Suhu");
+
+        txtInput.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+
+        comboAsal.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        comboAsal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "R", "F", "K" }));
+
+        comboTujuan.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        comboTujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C", "R", "F", "K" }));
+        comboTujuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTujuanActionPerformed(evt);
+            }
+        });
+
+        btnKonversi.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        btnKonversi.setText("Konversi");
+        btnKonversi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKonversiActionPerformed(evt);
+            }
+        });
+
+        txtHasil.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        txtRiwayat.setViewportView(jTextArea1);
+
+        radioOtomatis.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        radioOtomatis.setText("Konversi otomatis");
+        radioOtomatis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioOtomatisActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        jLabel2.setText("Dari Satuan:");
+
+        jLabel3.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        jLabel3.setText("Masukkan Suhu :");
+
+        jLabel4.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        jLabel4.setText("Ke Satuan:");
+
+        jLabel5.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        jLabel5.setText("Hasil Konversi:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRiwayat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtHasil))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel2))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(comboAsal, 0, 87, Short.MAX_VALUE)
+                                        .addComponent(comboTujuan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(btnKonversi)
+                                .addComponent(radioOtomatis)))))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(comboAsal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboTujuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(4, 4, 4)
+                .addComponent(radioOtomatis)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKonversi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtRiwayat, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnKonversiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKonversiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKonversiActionPerformed
+
+    private void comboTujuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTujuanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboTujuanActionPerformed
+
+    private void radioOtomatisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOtomatisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioOtomatisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +227,19 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKonversi;
+    private javax.swing.JComboBox<String> comboAsal;
+    private javax.swing.JComboBox<String> comboTujuan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JRadioButton radioOtomatis;
+    private javax.swing.JTextField txtHasil;
+    private javax.swing.JTextField txtInput;
+    private javax.swing.JScrollPane txtRiwayat;
     // End of variables declaration//GEN-END:variables
 }
