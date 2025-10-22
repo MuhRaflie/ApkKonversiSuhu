@@ -15,7 +15,7 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     public KonversiSuhuFrame() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,13 +32,14 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
         comboTujuan = new javax.swing.JComboBox<>();
         btnKonversi = new javax.swing.JButton();
         txtHasil = new javax.swing.JTextField();
-        txtRiwayat = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtRiwayat = new javax.swing.JTextArea();
         radioOtomatis = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnKeluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,10 +69,9 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
 
         txtHasil.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        txtRiwayat.setViewportView(jTextArea1);
+        txtRiwayat.setColumns(20);
+        txtRiwayat.setRows(5);
+        jScrollPane1.setViewportView(txtRiwayat);
 
         radioOtomatis.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
         radioOtomatis.setText("Konversi otomatis");
@@ -93,6 +93,14 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
         jLabel5.setText("Hasil Konversi:");
 
+        btnKeluar.setFont(new java.awt.Font("Milky Nice", 0, 14)); // NOI18N
+        btnKeluar.setText("Keluar");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -100,17 +108,11 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRiwayat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtInput, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtHasil))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGap(32, 32, 32)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,12 +121,26 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addComponent(jLabel2))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(comboAsal, 0, 87, Short.MAX_VALUE)
-                                        .addComponent(comboTujuan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(btnKonversi)
-                                .addComponent(radioOtomatis)))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(comboTujuan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboAsal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnKonversi)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnKeluar))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(radioOtomatis)
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(65, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,13 +160,15 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
                 .addGap(4, 4, 4)
                 .addComponent(radioOtomatis)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnKonversi)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnKonversi)
+                    .addComponent(btnKeluar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtHasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtRiwayat, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -180,7 +198,19 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKonversiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKonversiActionPerformed
-        // TODO add your handling code here:
+            try {
+                double nilai = Double.parseDouble(txtInput.getText().trim());
+                String asal = (String) comboAsal.getSelectedItem();
+                String tujuan = (String) comboTujuan.getSelectedItem();
+                double hasil = konversiSuhu(nilai, asal, tujuan);
+
+                txtHasil.setText(String.format("%.2f", hasil));
+                txtRiwayat.append(String.format("%.2f %s → %.2f %s\n", nilai, asal, hasil, tujuan));
+                } catch (NumberFormatException e) {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                "Masukkan angka yang valid!",
+                "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+                }
     }//GEN-LAST:event_btnKonversiActionPerformed
 
     private void comboTujuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTujuanActionPerformed
@@ -188,8 +218,51 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_comboTujuanActionPerformed
 
     private void radioOtomatisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioOtomatisActionPerformed
-        // TODO add your handling code here:
+            if (radioOtomatis.isSelected()) {
+        txtInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent e) {
+                try {
+                    double nilai = Double.parseDouble(txtInput.getText().trim());
+                    String asal = (String) comboAsal.getSelectedItem();
+                    String tujuan = (String) comboTujuan.getSelectedItem();
+                    double hasil = konversiSuhu(nilai, asal, tujuan);
+                    txtHasil.setText(String.format("%.2f", hasil));
+                } catch (NumberFormatException ex) {
+                    txtHasil.setText("Input tidak valid");
+                }
+            }
+        });
+    }
     }//GEN-LAST:event_radioOtomatisActionPerformed
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+         System.exit(0);
+    }//GEN-LAST:event_btnKeluarActionPerformed
+    
+    private double konversiSuhu(double nilai, String asal, String tujuan) {
+    double celsius;
+
+        // Konversi asal ke Celsius dulu
+        switch (asal) {
+            case "C": celsius = nilai; break;
+            case "F": celsius = (nilai - 32) * 5 / 9; break;
+            case "K": celsius = nilai - 273.15; break;
+            case "R": celsius = nilai * 5 / 4; break;
+            default: celsius = nilai; break;
+        }
+
+        // Konversi dari Celsius ke tujuan
+        switch (tujuan) {
+            case "C": return celsius;
+            case "F": return (celsius * 9 / 5) + 32;
+            case "K": return celsius + 273.15;
+            case "R": return celsius * 4 / 5;
+            default: return celsius;
+        }
+    
+  }
+    
+
 
     /**
      * @param args the command line arguments
@@ -227,6 +300,7 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnKonversi;
     private javax.swing.JComboBox<String> comboAsal;
     private javax.swing.JComboBox<String> comboTujuan;
@@ -236,10 +310,11 @@ public class KonversiSuhuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton radioOtomatis;
     private javax.swing.JTextField txtHasil;
     private javax.swing.JTextField txtInput;
-    private javax.swing.JScrollPane txtRiwayat;
+    private javax.swing.JTextArea txtRiwayat;
     // End of variables declaration//GEN-END:variables
+
 }
